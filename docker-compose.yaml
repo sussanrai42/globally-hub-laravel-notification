@@ -23,7 +23,7 @@ services:
             - '.:/var/www/html'
             # - 'sail-mysql:/var/www/html/storage/app/public'
         networks:
-            - sail
+            - golballyhub
         depends_on:
             - mysql
             - redis
@@ -43,7 +43,7 @@ services:
             - 'sail-mysql:/var/lib/mysql'
             # - './vendor/laravel/sail/database/mysql/create-testing-database.sh:/docker-entrypoint-initdb.d/10-create-testing-database.sh'
         networks:
-            - sail
+            - golballyhub
         healthcheck:
             test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
             retries: 3
@@ -56,7 +56,7 @@ services:
         volumes:
             - 'sail-redis:/data'
         networks:
-            - sail
+            - golballyhub
         healthcheck:
             test: ["CMD", "redis-cli", "ping"]
             retries: 3
@@ -74,11 +74,27 @@ services:
         depends_on:
           - mysql
         networks:
-          - sail
+          - golballyhub
+    rabbitmq:
+        image: rabbitmq:3.8-management-alpine
+        container_name: globallyhublaravel_rabbitmq
+        environment:
+            RABBITMQ_DEFAULT_USER: admin
+            RABBITMQ_DEFAULT_PASS: password
+        ports:
+            - "5672:5672"   # AMQP protocol
+            - "15672:15672" # RabbitMQ management UI
+        volumes:
+            - sail-rabbitmq:/var/lib/rabbitmq
+        networks:
+            - golballyhub
 networks:
-    sail:
-        driver: bridge
+    golballyhub:
+        # driver: bridge
+        external: true
 volumes:
+    sail-rabbitmq:
+        driver: local
     sail-storage:
         driver: local
     sail-mysql:
