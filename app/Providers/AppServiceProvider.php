@@ -4,13 +4,19 @@ namespace App\Providers;
 
 use App\Bus\IlluminateQueryBus;
 use App\Bus\IlluminateCommandBus;
+use App\Queries\GetCountriesQuery;
 use App\Commands\CreateUserCommand;
 use App\Queries\GetUserByEmailQuery;
+use App\Queries\GetNotificationsQuery;
 use App\Bus\Contracts\QueryBusContract;
 use Illuminate\Support\ServiceProvider;
 use App\Bus\Contracts\CommandBusContract;
+use App\QueryHandlers\GetCountriesQueryHandler;
 use App\QueryHandlers\GetUserByEmailQueryHandler;
 use App\CommandHandlers\CreateUserCommandHandler;
+use App\QueryHandlers\GetNotificationsQueryHandler;
+use App\Commands\Notification\CreateNotificationCommand;
+use App\CommandHandlers\Notification\CreateNotificationCommandHandler;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -41,6 +47,7 @@ class AppServiceProvider extends ServiceProvider
         $commandBus->register([
             // Command::class => CommandHandler::class
             CreateUserCommand::class => CreateUserCommandHandler::class,
+            CreateNotificationCommand::class => CreateNotificationCommandHandler::class
         ]);
     }
 
@@ -50,6 +57,8 @@ class AppServiceProvider extends ServiceProvider
         $queryBus->register([
             // Query::class => QueryHandler::class,
             GetUserByEmailQuery::class => GetUserByEmailQueryHandler::class,
+            GetCountriesQuery::class => GetCountriesQueryHandler::class,
+            GetNotificationsQuery::class => GetNotificationsQueryHandler::class
         ]);
     }
 }

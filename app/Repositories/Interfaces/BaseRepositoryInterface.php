@@ -2,8 +2,9 @@
 
 namespace App\Repositories\Interfaces;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 interface BaseRepositoryInterface
 {
@@ -53,4 +54,12 @@ interface BaseRepositoryInterface
      * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
      */
     public function delete(string|int $id): bool;
+
+    /**
+     * Paginate the models with optional filterable parameters.
+     *
+     * @param array $filterable The array of filterable parameters, such as 'per_page' and 'page'.
+     * @return LengthAwarePaginator The paginator instance containing the paginated results.
+     */
+    public function paginate(array $filterable = []): LengthAwarePaginator;
 }

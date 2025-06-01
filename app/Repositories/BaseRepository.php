@@ -2,9 +2,12 @@
 
 namespace App\Repositories;
 
+use App\Rules\StringOrIntegerRule;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Validator;
 use App\Repositories\Interfaces\BaseRepositoryInterface;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 abstract class BaseRepository implements BaseRepositoryInterface
 {
@@ -81,5 +84,44 @@ abstract class BaseRepository implements BaseRepositoryInterface
     public function delete(string|int $id): bool
     {
         return $this->findOrFail($id)->delete();
+    }
+
+    /**
+     * Paginate the models with optional filterable parameters.
+     *
+     * @param array $filterable The array of filterable parameters, such as 'per_page' and 'page'.
+     * @return LengthAwarePaginator The paginator instance containing the paginated results.
+     */
+    public function paginate(array $filterable = []): LengthAwarePaginator
+    {
+        $this->validateFilterable($filterable);
+
+        $perPage = $filterable['per_page'] ?? 10;
+        $sortBy = $filterable['sort_by'] ?? 'created_at';
+        $sortOrder = $filterable['sort_order'] ?? 'desc';
+        return $this->model->query()
+            ->where($filterable['filters'] ?? [])
+            ->orderBy($sortBy, $sortOrder)
+            ->paginate($perPage)
+            ->appends(request()->except("page"));
+    }
+
+    /**
+     * Validate the filterable parameters for pagination.
+     *
+     * @param array $filterable The array of filterable parameters.
+     * @return array The validated filterable parameters.
+     */
+    protected function validateFilterable(array $filterable): array
+    {
+        return Validator::make($filterable, [
+            'sort_by' => 'sometimes|string',
+            'sort_order' => 'sometimes|in:asc,desc',
+            'per_page' => 'sometimes|integer|min:1|max:100',
+            'page' => 'sometimes|integer|min:1',
+            'filters' => 'sometimes|array',
+            'filters.*.field' => 'required|string',
+            'filters.*.value' => ['required', new StringOrIntegerRule],
+        ])->validate();
     }
 }
