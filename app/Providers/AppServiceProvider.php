@@ -4,9 +4,13 @@ namespace App\Providers;
 
 use App\Bus\IlluminateQueryBus;
 use App\Bus\IlluminateCommandBus;
+use App\Commands\CreateUserCommand;
+use App\Queries\GetUserByEmailQuery;
 use App\Bus\Contracts\QueryBusContract;
 use Illuminate\Support\ServiceProvider;
 use App\Bus\Contracts\CommandBusContract;
+use App\QueryHandlers\GetUserByEmailQueryHandler;
+use App\CommandHandlers\CreateUserCommandHandler;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -36,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
         $commandBus = app(CommandBusContract::class);
         $commandBus->register([
             // Command::class => CommandHandler::class
+            CreateUserCommand::class => CreateUserCommandHandler::class,
         ]);
     }
 
@@ -44,6 +49,7 @@ class AppServiceProvider extends ServiceProvider
         $queryBus = app(QueryBusContract::class);
         $queryBus->register([
             // Query::class => QueryHandler::class,
+            GetUserByEmailQuery::class => GetUserByEmailQueryHandler::class,
         ]);
     }
 }

@@ -16,6 +16,7 @@ Route::get('test/amqp/{type}/{channel}', function (string $type, string $channel
         "channel" => $channel,
         "to" => "test.hub@gmail.com",
         'message' => "Test message for amqp",
+        "userId" => 1,
         "data" => [
             "firstName" => "Test",
             "lastName" => "hub",
