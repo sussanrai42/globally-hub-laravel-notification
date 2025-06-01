@@ -35,4 +35,5 @@ return [
         ],
     ],
 
+    'isc_hash_key' => env("ISC_HASH_KEY", "globallyhub@123"),
 ];

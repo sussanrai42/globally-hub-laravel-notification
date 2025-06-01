@@ -23,6 +23,7 @@ class NotificationCreatedListener extends BaseListener
     {
         $payload = [
             "type" => $event->notification->type,
+            "id" => $event->notification->id,
             "to" => $event->notification->contact,
             "title" => $event->notification->title,
             'message' => $event->notification->message,

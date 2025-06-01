@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Queries\GetNotificationsQuery;
 use App\Bus\Contracts\QueryBusContract;
@@ -39,12 +40,16 @@ class NotificationController extends Controller
      */
     public function store(CreateNotificationRequest $request): JsonResponse
     {
+        DB::beginTransaction();
         try {
+            $data = $this->commandBus->dispatch(new CreateNotificationCommand($request->toDto()));
+            DB::commit();
             return $this->successResponse(
                 message: 'Notification created successfully',
-                data: $this->commandBus->dispatch(new CreateNotificationCommand($request->toDto()))
+                data: $data
             );
         } catch (Exception $ex) {
+            DB::rollBack();
             return $this->handleException($ex);
         }
     }

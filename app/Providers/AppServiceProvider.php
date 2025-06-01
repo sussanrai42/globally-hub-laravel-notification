@@ -16,7 +16,9 @@ use App\QueryHandlers\GetUserByEmailQueryHandler;
 use App\CommandHandlers\CreateUserCommandHandler;
 use App\QueryHandlers\GetNotificationsQueryHandler;
 use App\Commands\Notification\CreateNotificationCommand;
+use App\Commands\Notification\UpdateNotificationStatusCommand;
 use App\CommandHandlers\Notification\CreateNotificationCommandHandler;
+use App\CommandHandlers\Notification\UpdateNotificationStatusCommandHandler;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -47,7 +49,8 @@ class AppServiceProvider extends ServiceProvider
         $commandBus->register([
             // Command::class => CommandHandler::class
             CreateUserCommand::class => CreateUserCommandHandler::class,
-            CreateNotificationCommand::class => CreateNotificationCommandHandler::class
+            CreateNotificationCommand::class => CreateNotificationCommandHandler::class,
+            UpdateNotificationStatusCommand::class => UpdateNotificationStatusCommandHandler::class
         ]);
     }
 
