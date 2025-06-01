@@ -4,6 +4,7 @@ use Illuminate\Auth\AuthenticationException;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Validation\UnauthorizedException;
 use App\Exceptions\ContactNumberMissingException;
+use App\Exceptions\RateLimitNotificationException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Exceptions\ThrottleRequestsException;
@@ -48,5 +49,6 @@ return [
         MethodNotAllowedHttpException::class,
         ThrottleRequestsException::class,
         ContactNumberMissingException::class,
+        RateLimitNotificationException::class,
     ],
 ];

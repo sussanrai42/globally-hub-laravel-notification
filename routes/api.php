@@ -16,7 +16,7 @@ Route::prefix('v1')
         Route::post('auth/register', [AuthController::class, 'register']);
         Route::middleware(['auth:sanctum'])->group(function () {
             Route::get('notifications', [NotificationController::class, 'index']);
-            Route::post('notifications', [NotificationController::class, 'store'])->middleware('throttle:10,1');
+            Route::post('notifications', [NotificationController::class, 'store']);
         });
 
         Route::prefix('isc')

@@ -123,4 +123,10 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'notification' => [
+        'create' => [
+            'rate_limit' => env('NOTIFICATION_CREATE_RATE_LIMIT', 10),
+            'decay_in_seconds' => env('NOTIFICATION_CREATE_DECAY_IN_SECONDS', 60),
+        ]
+    ],
 ];
