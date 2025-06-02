@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use Laravel\Sanctum\Sanctum;
 use App\Bus\IlluminateQueryBus;
 use App\Bus\IlluminateCommandBus;
 use App\Queries\GetCountriesQuery;
 use App\Commands\CreateUserCommand;
+use App\Models\PersonalAccessToken;
 use App\Queries\GetUserByEmailQuery;
 use App\Queries\GetNotificationsQuery;
 use App\Bus\Contracts\QueryBusContract;
@@ -39,6 +41,8 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
+
         $this->registerCommandHandlers();
         $this->registerQueryHandlers();
     }

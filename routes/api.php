@@ -12,8 +12,11 @@ Route::get('test/command', [TestController::class, 'create']);
 Route::prefix('v1')
     ->group(function () {
         Route::get('countries', [CountryController::class, 'index']);
-        Route::post('auth/login', [AuthController::class, 'login']);
-        Route::post('auth/register', [AuthController::class, 'register']);
+        Route::prefix('auth')->group(function () {
+            Route::post('introspect', [AuthController::class, 'introspect']);
+            Route::post('login', [AuthController::class, 'login']);
+            Route::post('register', [AuthController::class, 'register']);
+        });
         Route::middleware(['auth:sanctum'])->group(function () {
             Route::get('notifications', [NotificationController::class, 'index']);
             Route::post('notifications', [NotificationController::class, 'store']);
