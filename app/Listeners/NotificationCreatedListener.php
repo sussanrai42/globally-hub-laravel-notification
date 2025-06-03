@@ -31,11 +31,11 @@ class NotificationCreatedListener extends BaseListener
             "payload" => $event->notification->payload
         ];
 
-        Amqp::publish('test-queue11', json_encode($payload), [
+        Amqp::publish('notification-queue-routing-key', json_encode($payload), [
             'content_type' => 'application/json',
             'delivery_mode' => 2, // Make message persistent
-            'exchange' => 'laravel-exchange1',
-            'queue' => 'notify-queue12',
+            'exchange' => 'laravel-notification-exchange',
+            'queue' => 'notify-laravel-queue',
             'exchange_type' => 'direct',
         ]);
     }
