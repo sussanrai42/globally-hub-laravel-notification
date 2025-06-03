@@ -1,0 +1,736 @@
+{
+	"info": {
+		"_postman_id": "9a32e5d4-6c3d-4687-b09a-b94c520bf9f7",
+		"name": "Laraavel Notification Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21563152",
+		"_collection_link": "https://lunar-equinox-511205.postman.co/workspace/Keepler~0f8e4e5e-07cf-4296-bdd8-720df8c332b5/collection/21563152-9a32e5d4-6c3d-4687-b09a-b94c520bf9f7?action=share&source=collection_link&creator=21563152"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test user",
+									"description": "Required, String",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "testuser122@gmail.com",
+									"description": "Required, String",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testusere@gmasdad",
+									"description": "Required, String",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "GS",
+									"description": "Required, iso_code_2 of country",
+									"type": "text"
+								},
+								{
+									"key": "contact_number",
+									"value": "12323213",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{laravel_notification_url}}/api/v1/auth/register",
+							"host": [
+								"{{laravel_notification_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Test user",
+											"description": "Required, String",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "testuser1@gmail.com",
+											"description": "Required, String",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "testusere@gmasdad",
+											"description": "Required, String",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_BASE_URL}}/api/user/register",
+									"host": [
+										"{{API_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 06:16:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User register successfully\",\n    \"data\": {\n        \"name\": \"Test user\",\n        \"email\": \"testuser1@gmail.com\",\n        \"updated_at\": \"2025-05-31T06:16:11.000000Z\",\n        \"created_at\": \"2025-05-31T06:16:11.000000Z\",\n        \"id\": 2\n    }\n}"
+						},
+						{
+							"name": "422 Validation Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Test user",
+											"description": "Required, String",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "testuser@gmail.com",
+											"description": "Required, String",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "testusere@gmasdad",
+											"description": "Required, String",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_BASE_URL}}/api/user/register",
+									"host": [
+										"{{API_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 06:15:30 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The email has already been taken.\",\n    \"errors\": {\n        \"email\": [\n            \"The email has already been taken.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "testuser1@gmail.com",
+									"description": "Required, String",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testusere@gmasdad",
+									"description": "Required, String",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{laravel_notification_url}}/api/v1/auth/login",
+							"host": [
+								"{{laravel_notification_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "testuser1@gmail.com",
+											"description": "Required, String",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "testusere@gmasdad",
+											"description": "Required, String",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_BASE_URL}}/api/user/login",
+									"host": [
+										"{{API_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 19:13:29 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"token_type\": \"Bearer\",\n        \"access_token\": \"8|kZPUF6hk9FqiPQRYg5554RUmcdGJ3xs0SNglKTkQaccc15c7\"\n    }\n}"
+						},
+						{
+							"name": "422 Validation Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "testuser1@gmail.com",
+											"description": "Required, String",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "testusere@gmasdad",
+											"description": "Required, String",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{API_BASE_URL}}/api/user/login",
+									"host": [
+										"{{API_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.21"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 31 May 2025 19:14:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The email field is required. (and 1 more error)\",\n    \"errors\": {\n        \"email\": [\n            \"The email field is required.\"\n        ],\n        \"password\": [\n            \"The password field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Introspect",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"description": "Required, String",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{laravel_notification_url}}/api/v1/auth/introspect",
+							"host": [
+								"{{laravel_notification_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"introspect"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "List Notifications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_BASE_URL}}/api/v1/notifications?page=1&per_page=10",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notifications"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Sometimes, Integer"
+								},
+								{
+									"key": "per_page",
+									"value": "10",
+									"description": "Sometimes, integer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Notification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "email",
+									"description": "Required, String - either sms or email",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Test title email subject",
+									"description": "Required, String",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "tet message email",
+									"description": "Required, String",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{laravel_notification_url}}/api/v1/notifications",
+							"host": [
+								"{{laravel_notification_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ISC",
+			"item": [
+				{
+					"name": "Update Notification Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "status",
+									"value": "completed",
+									"description": "Required, String - either completed or failed",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{laravel_notification_url}}/api/v1/isc/notifications/:notification_id/update-status?hash=2b82c6d6cb83a4be48f6d55f3520e527",
+							"host": [
+								"{{laravel_notification_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"isc",
+								"notifications",
+								":notification_id",
+								"update-status"
+							],
+							"query": [
+								{
+									"key": "hash",
+									"value": "2b82c6d6cb83a4be48f6d55f3520e527",
+									"description": "Required, String - it is used to authorized api"
+								}
+							],
+							"variable": [
+								{
+									"key": "notification_id",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "List Countries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{laravel_notification_url}}/api/v1/countries",
+					"host": [
+						"{{laravel_notification_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"countries"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_BASE_URL}}/api/v1/countries",
+							"host": [
+								"{{API_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"countries"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.21"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 01 Jun 2025 07:20:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"name\": \"South Georgia\",\n            \"iso_code_2\": \"GS\",\n            \"iso_code_3\": \"SGS\",\n            \"numeric_code\": \"239\",\n            \"dialing_code\": \"+500\"\n        },\n        {\n            \"name\": \"Grenada\",\n            \"iso_code_2\": \"GD\",\n            \"iso_code_3\": \"GRD\",\n            \"numeric_code\": \"308\",\n            \"dialing_code\": \"+1473\"\n        },\n        {\n            \"name\": \"Switzerland\",\n            \"iso_code_2\": \"CH\",\n            \"iso_code_3\": \"CHE\",\n            \"numeric_code\": \"756\",\n            \"dialing_code\": \"+41\"\n        },\n        {\n            \"name\": \"Sierra Leone\",\n            \"iso_code_2\": \"SL\",\n            \"iso_code_3\": \"SLE\",\n            \"numeric_code\": \"694\",\n            \"dialing_code\": \"+232\"\n        },\n        {\n            \"name\": \"Hungary\",\n            \"iso_code_2\": \"HU\",\n            \"iso_code_3\": \"HUN\",\n            \"numeric_code\": \"348\",\n            \"dialing_code\": \"+36\"\n        },\n        {\n            \"name\": \"Taiwan\",\n            \"iso_code_2\": \"TW\",\n            \"iso_code_3\": \"TWN\",\n            \"numeric_code\": \"158\",\n            \"dialing_code\": \"+886\"\n        },\n        {\n            \"name\": \"Wallis and Futuna\",\n            \"iso_code_2\": \"WF\",\n            \"iso_code_3\": \"WLF\",\n            \"numeric_code\": \"876\",\n            \"dialing_code\": \"+681\"\n        },\n        {\n            \"name\": \"Barbados\",\n            \"iso_code_2\": \"BB\",\n            \"iso_code_3\": \"BRB\",\n            \"numeric_code\": \"052\",\n            \"dialing_code\": \"+1246\"\n        },\n        {\n            \"name\": \"Pitcairn Islands\",\n            \"iso_code_2\": \"PN\",\n            \"iso_code_3\": \"PCN\",\n            \"numeric_code\": \"612\",\n            \"dialing_code\": \"+64\"\n        },\n        {\n            \"name\": \"Ivory Coast\",\n            \"iso_code_2\": \"CI\",\n            \"iso_code_3\": \"CIV\",\n            \"numeric_code\": \"384\",\n            \"dialing_code\": \"+225\"\n        },\n        {\n            \"name\": \"Tunisia\",\n            \"iso_code_2\": \"TN\",\n            \"iso_code_3\": \"TUN\",\n            \"numeric_code\": \"788\",\n            \"dialing_code\": \"+216\"\n        },\n        {\n            \"name\": \"Italy\",\n            \"iso_code_2\": \"IT\",\n            \"iso_code_3\": \"ITA\",\n            \"numeric_code\": \"380\",\n            \"dialing_code\": \"+39\"\n        },\n        {\n            \"name\": \"Benin\",\n            \"iso_code_2\": \"BJ\",\n            \"iso_code_3\": \"BEN\",\n            \"numeric_code\": \"204\",\n            \"dialing_code\": \"+229\"\n        },\n        {\n            \"name\": \"Indonesia\",\n            \"iso_code_2\": \"ID\",\n            \"iso_code_3\": \"IDN\",\n            \"numeric_code\": \"360\",\n            \"dialing_code\": \"+62\"\n        },\n        {\n            \"name\": \"Cape Verde\",\n            \"iso_code_2\": \"CV\",\n            \"iso_code_3\": \"CPV\",\n            \"numeric_code\": \"132\",\n            \"dialing_code\": \"+238\"\n        },\n        {\n            \"name\": \"Saint Kitts and Nevis\",\n            \"iso_code_2\": \"KN\",\n            \"iso_code_3\": \"KNA\",\n            \"numeric_code\": \"659\",\n            \"dialing_code\": \"+1869\"\n        },\n        {\n            \"name\": \"Laos\",\n            \"iso_code_2\": \"LA\",\n            \"iso_code_3\": \"LAO\",\n            \"numeric_code\": \"418\",\n            \"dialing_code\": \"+856\"\n        },\n        {\n            \"name\": \"Caribbean Netherlands\",\n            \"iso_code_2\": \"BQ\",\n            \"iso_code_3\": \"BES\",\n            \"numeric_code\": \"535\",\n            \"dialing_code\": \"+599\"\n        },\n        {\n            \"name\": \"Uganda\",\n            \"iso_code_2\": \"UG\",\n            \"iso_code_3\": \"UGA\",\n            \"numeric_code\": \"800\",\n            \"dialing_code\": \"+256\"\n        },\n        {\n            \"name\": \"Andorra\",\n            \"iso_code_2\": \"AD\",\n            \"iso_code_3\": \"AND\",\n            \"numeric_code\": \"020\",\n            \"dialing_code\": \"+376\"\n        },\n        {\n            \"name\": \"Burundi\",\n            \"iso_code_2\": \"BI\",\n            \"iso_code_3\": \"BDI\",\n            \"numeric_code\": \"108\",\n            \"dialing_code\": \"+257\"\n        },\n        {\n            \"name\": \"South Africa\",\n            \"iso_code_2\": \"ZA\",\n            \"iso_code_3\": \"ZAF\",\n            \"numeric_code\": \"710\",\n            \"dialing_code\": \"+27\"\n        },\n        {\n            \"name\": \"France\",\n            \"iso_code_2\": \"FR\",\n            \"iso_code_3\": \"FRA\",\n            \"numeric_code\": \"250\",\n            \"dialing_code\": \"+33\"\n        },\n        {\n            \"name\": \"Libya\",\n            \"iso_code_2\": \"LY\",\n            \"iso_code_3\": \"LBY\",\n            \"numeric_code\": \"434\",\n            \"dialing_code\": \"+218\"\n        },\n        {\n            \"name\": \"Mexico\",\n            \"iso_code_2\": \"MX\",\n            \"iso_code_3\": \"MEX\",\n            \"numeric_code\": \"484\",\n            \"dialing_code\": \"+52\"\n        },\n        {\n            \"name\": \"Gabon\",\n            \"iso_code_2\": \"GA\",\n            \"iso_code_3\": \"GAB\",\n            \"numeric_code\": \"266\",\n            \"dialing_code\": \"+241\"\n        },\n        {\n            \"name\": \"Northern Mariana Islands\",\n            \"iso_code_2\": \"MP\",\n            \"iso_code_3\": \"MNP\",\n            \"numeric_code\": \"580\",\n            \"dialing_code\": \"+1670\"\n        },\n        {\n            \"name\": \"North Macedonia\",\n            \"iso_code_2\": \"MK\",\n            \"iso_code_3\": \"MKD\",\n            \"numeric_code\": \"807\",\n            \"dialing_code\": \"+389\"\n        },\n        {\n            \"name\": \"China\",\n            \"iso_code_2\": \"CN\",\n            \"iso_code_3\": \"CHN\",\n            \"numeric_code\": \"156\",\n            \"dialing_code\": \"+86\"\n        },\n        {\n            \"name\": \"Yemen\",\n            \"iso_code_2\": \"YE\",\n            \"iso_code_3\": \"YEM\",\n            \"numeric_code\": \"887\",\n            \"dialing_code\": \"+967\"\n        },\n        {\n            \"name\": \"Saint Barthélemy\",\n            \"iso_code_2\": \"BL\",\n            \"iso_code_3\": \"BLM\",\n            \"numeric_code\": \"652\",\n            \"dialing_code\": \"+590\"\n        },\n        {\n            \"name\": \"Guernsey\",\n            \"iso_code_2\": \"GG\",\n            \"iso_code_3\": \"GGY\",\n            \"numeric_code\": \"831\",\n            \"dialing_code\": \"+44\"\n        },\n        {\n            \"name\": \"Solomon Islands\",\n            \"iso_code_2\": \"SB\",\n            \"iso_code_3\": \"SLB\",\n            \"numeric_code\": \"090\",\n            \"dialing_code\": \"+677\"\n        },\n        {\n            \"name\": \"Svalbard and Jan Mayen\",\n            \"iso_code_2\": \"SJ\",\n            \"iso_code_3\": \"SJM\",\n            \"numeric_code\": \"744\",\n            \"dialing_code\": \"+4779\"\n        },\n        {\n            \"name\": \"Faroe Islands\",\n            \"iso_code_2\": \"FO\",\n            \"iso_code_3\": \"FRO\",\n            \"numeric_code\": \"234\",\n            \"dialing_code\": \"+298\"\n        },\n        {\n            \"name\": \"Uzbekistan\",\n            \"iso_code_2\": \"UZ\",\n            \"iso_code_3\": \"UZB\",\n            \"numeric_code\": \"860\",\n            \"dialing_code\": \"+998\"\n        },\n        {\n            \"name\": \"Egypt\",\n            \"iso_code_2\": \"EG\",\n            \"iso_code_3\": \"EGY\",\n            \"numeric_code\": \"818\",\n            \"dialing_code\": \"+20\"\n        },\n        {\n            \"name\": \"Senegal\",\n            \"iso_code_2\": \"SN\",\n            \"iso_code_3\": \"SEN\",\n            \"numeric_code\": \"686\",\n            \"dialing_code\": \"+221\"\n        },\n        {\n            \"name\": \"Sri Lanka\",\n            \"iso_code_2\": \"LK\",\n            \"iso_code_3\": \"LKA\",\n            \"numeric_code\": \"144\",\n            \"dialing_code\": \"+94\"\n        },\n        {\n            \"name\": \"Palestine\",\n            \"iso_code_2\": \"PS\",\n            \"iso_code_3\": \"PSE\",\n            \"numeric_code\": \"275\",\n            \"dialing_code\": \"+970\"\n        },\n        {\n            \"name\": \"Bangladesh\",\n            \"iso_code_2\": \"BD\",\n            \"iso_code_3\": \"BGD\",\n            \"numeric_code\": \"050\",\n            \"dialing_code\": \"+880\"\n        },\n        {\n            \"name\": \"Peru\",\n            \"iso_code_2\": \"PE\",\n            \"iso_code_3\": \"PER\",\n            \"numeric_code\": \"604\",\n            \"dialing_code\": \"+51\"\n        },\n        {\n            \"name\": \"Singapore\",\n            \"iso_code_2\": \"SG\",\n            \"iso_code_3\": \"SGP\",\n            \"numeric_code\": \"702\",\n            \"dialing_code\": \"+65\"\n        },\n        {\n            \"name\": \"Turkey\",\n            \"iso_code_2\": \"TR\",\n            \"iso_code_3\": \"TUR\",\n            \"numeric_code\": \"792\",\n            \"dialing_code\": \"+90\"\n        },\n        {\n            \"name\": \"Afghanistan\",\n            \"iso_code_2\": \"AF\",\n            \"iso_code_3\": \"AFG\",\n            \"numeric_code\": \"004\",\n            \"dialing_code\": \"+93\"\n        },\n        {\n            \"name\": \"Aruba\",\n            \"iso_code_2\": \"AW\",\n            \"iso_code_3\": \"ABW\",\n            \"numeric_code\": \"533\",\n            \"dialing_code\": \"+297\"\n        },\n        {\n            \"name\": \"Cook Islands\",\n            \"iso_code_2\": \"CK\",\n            \"iso_code_3\": \"COK\",\n            \"numeric_code\": \"184\",\n            \"dialing_code\": \"+682\"\n        },\n        {\n            \"name\": \"United Kingdom\",\n            \"iso_code_2\": \"GB\",\n            \"iso_code_3\": \"GBR\",\n            \"numeric_code\": \"826\",\n            \"dialing_code\": \"+44\"\n        },\n        {\n            \"name\": \"Zambia\",\n            \"iso_code_2\": \"ZM\",\n            \"iso_code_3\": \"ZMB\",\n            \"numeric_code\": \"894\",\n            \"dialing_code\": \"+260\"\n        },\n        {\n            \"name\": \"Finland\",\n            \"iso_code_2\": \"FI\",\n            \"iso_code_3\": \"FIN\",\n            \"numeric_code\": \"246\",\n            \"dialing_code\": \"+358\"\n        },\n        {\n            \"name\": \"Niger\",\n            \"iso_code_2\": \"NE\",\n            \"iso_code_3\": \"NER\",\n            \"numeric_code\": \"562\",\n            \"dialing_code\": \"+227\"\n        },\n        {\n            \"name\": \"Christmas Island\",\n            \"iso_code_2\": \"CX\",\n            \"iso_code_3\": \"CXR\",\n            \"numeric_code\": \"162\",\n            \"dialing_code\": \"+61\"\n        },\n        {\n            \"name\": \"Tokelau\",\n            \"iso_code_2\": \"TK\",\n            \"iso_code_3\": \"TKL\",\n            \"numeric_code\": \"772\",\n            \"dialing_code\": \"+690\"\n        },\n        {\n            \"name\": \"Guinea-Bissau\",\n            \"iso_code_2\": \"GW\",\n            \"iso_code_3\": \"GNB\",\n            \"numeric_code\": \"624\",\n            \"dialing_code\": \"+245\"\n        },\n        {\n            \"name\": \"Azerbaijan\",\n            \"iso_code_2\": \"AZ\",\n            \"iso_code_3\": \"AZE\",\n            \"numeric_code\": \"031\",\n            \"dialing_code\": \"+994\"\n        },\n        {\n            \"name\": \"Réunion\",\n            \"iso_code_2\": \"RE\",\n            \"iso_code_3\": \"REU\",\n            \"numeric_code\": \"638\",\n            \"dialing_code\": \"+262\"\n        },\n        {\n            \"name\": \"Djibouti\",\n            \"iso_code_2\": \"DJ\",\n            \"iso_code_3\": \"DJI\",\n            \"numeric_code\": \"262\",\n            \"dialing_code\": \"+253\"\n        },\n        {\n            \"name\": \"North Korea\",\n            \"iso_code_2\": \"KP\",\n            \"iso_code_3\": \"PRK\",\n            \"numeric_code\": \"408\",\n            \"dialing_code\": \"+850\"\n        },\n        {\n            \"name\": \"Mauritius\",\n            \"iso_code_2\": \"MU\",\n            \"iso_code_3\": \"MUS\",\n            \"numeric_code\": \"480\",\n            \"dialing_code\": \"+230\"\n        },\n        {\n            \"name\": \"Montserrat\",\n            \"iso_code_2\": \"MS\",\n            \"iso_code_3\": \"MSR\",\n            \"numeric_code\": \"500\",\n            \"dialing_code\": \"+1664\"\n        },\n        {\n            \"name\": \"United States Virgin Islands\",\n            \"iso_code_2\": \"VI\",\n            \"iso_code_3\": \"VIR\",\n            \"numeric_code\": \"850\",\n            \"dialing_code\": \"+1340\"\n        },\n        {\n            \"name\": \"Colombia\",\n            \"iso_code_2\": \"CO\",\n            \"iso_code_3\": \"COL\",\n            \"numeric_code\": \"170\",\n            \"dialing_code\": \"+57\"\n        },\n        {\n            \"name\": \"Greece\",\n            \"iso_code_2\": \"GR\",\n            \"iso_code_3\": \"GRC\",\n            \"numeric_code\": \"300\",\n            \"dialing_code\": \"+30\"\n        },\n        {\n            \"name\": \"Croatia\",\n            \"iso_code_2\": \"HR\",\n            \"iso_code_3\": \"HRV\",\n            \"numeric_code\": \"191\",\n            \"dialing_code\": \"+385\"\n        },\n        {\n            \"name\": \"Morocco\",\n            \"iso_code_2\": \"MA\",\n            \"iso_code_3\": \"MAR\",\n            \"numeric_code\": \"504\",\n            \"dialing_code\": \"+212\"\n        },\n        {\n            \"name\": \"Algeria\",\n            \"iso_code_2\": \"DZ\",\n            \"iso_code_3\": \"DZA\",\n            \"numeric_code\": \"012\",\n            \"dialing_code\": \"+213\"\n        },\n        {\n            \"name\": \"Antarctica\",\n            \"iso_code_2\": \"AQ\",\n            \"iso_code_3\": \"ATA\",\n            \"numeric_code\": \"010\",\n            \"dialing_code\": \"\"\n        },\n        {\n            \"name\": \"Netherlands\",\n            \"iso_code_2\": \"NL\",\n            \"iso_code_3\": \"NLD\",\n            \"numeric_code\": \"528\",\n            \"dialing_code\": \"+31\"\n        },\n        {\n            \"name\": \"Sudan\",\n            \"iso_code_2\": \"SD\",\n            \"iso_code_3\": \"SDN\",\n            \"numeric_code\": \"729\",\n            \"dialing_code\": \"+249\"\n        },\n        {\n            \"name\": \"Fiji\",\n            \"iso_code_2\": \"FJ\",\n            \"iso_code_3\": \"FJI\",\n            \"numeric_code\": \"242\",\n            \"dialing_code\": \"+679\"\n        },\n        {\n            \"name\": \"Liechtenstein\",\n            \"iso_code_2\": \"LI\",\n            \"iso_code_3\": \"LIE\",\n            \"numeric_code\": \"438\",\n            \"dialing_code\": \"+423\"\n        },\n        {\n            \"name\": \"Nepal\",\n            \"iso_code_2\": \"NP\",\n            \"iso_code_3\": \"NPL\",\n            \"numeric_code\": \"524\",\n            \"dialing_code\": \"+977\"\n        },\n        {\n            \"name\": \"Puerto Rico\",\n            \"iso_code_2\": \"PR\",\n            \"iso_code_3\": \"PRI\",\n            \"numeric_code\": \"630\",\n            \"dialing_code\": \"+1\"\n        },\n        {\n            \"name\": \"Georgia\",\n            \"iso_code_2\": \"GE\",\n            \"iso_code_3\": \"GEO\",\n            \"numeric_code\": \"268\",\n            \"dialing_code\": \"+995\"\n        },\n        {\n            \"name\": \"Pakistan\",\n            \"iso_code_2\": \"PK\",\n            \"iso_code_3\": \"PAK\",\n            \"numeric_code\": \"586\",\n            \"dialing_code\": \"+92\"\n        },\n        {\n            \"name\": \"Monaco\",\n            \"iso_code_2\": \"MC\",\n            \"iso_code_3\": \"MCO\",\n            \"numeric_code\": \"492\",\n            \"dialing_code\": \"+377\"\n        },\n        {\n            \"name\": \"Botswana\",\n            \"iso_code_2\": \"BW\",\n            \"iso_code_3\": \"BWA\",\n            \"numeric_code\": \"072\",\n            \"dialing_code\": \"+267\"\n        },\n        {\n            \"name\": \"Lebanon\",\n            \"iso_code_2\": \"LB\",\n            \"iso_code_3\": \"LBN\",\n            \"numeric_code\": \"422\",\n            \"dialing_code\": \"+961\"\n        },\n        {\n            \"name\": \"Papua New Guinea\",\n            \"iso_code_2\": \"PG\",\n            \"iso_code_3\": \"PNG\",\n            \"numeric_code\": \"598\",\n            \"dialing_code\": \"+675\"\n        },\n        {\n            \"name\": \"Mayotte\",\n            \"iso_code_2\": \"YT\",\n            \"iso_code_3\": \"MYT\",\n            \"numeric_code\": \"175\",\n            \"dialing_code\": \"+262\"\n        },\n        {\n            \"name\": \"Dominican Republic\",\n            \"iso_code_2\": \"DO\",\n            \"iso_code_3\": \"DOM\",\n            \"numeric_code\": \"214\",\n            \"dialing_code\": \"+1\"\n        },\n        {\n            \"name\": \"Norfolk Island\",\n            \"iso_code_2\": \"NF\",\n            \"iso_code_3\": \"NFK\",\n            \"numeric_code\": \"574\",\n            \"dialing_code\": \"+672\"\n        },\n        {\n            \"name\": \"Bouvet Island\",\n            \"iso_code_2\": \"BV\",\n            \"iso_code_3\": \"BVT\",\n            \"numeric_code\": \"074\",\n            \"dialing_code\": \"+47\"\n        },\n        {\n            \"name\": \"Qatar\",\n            \"iso_code_2\": \"QA\",\n            \"iso_code_3\": \"QAT\",\n            \"numeric_code\": \"634\",\n            \"dialing_code\": \"+974\"\n        },\n        {\n            \"name\": \"Madagascar\",\n            \"iso_code_2\": \"MG\",\n            \"iso_code_3\": \"MDG\",\n            \"numeric_code\": \"450\",\n            \"dialing_code\": \"+261\"\n        },\n        {\n            \"name\": \"India\",\n            \"iso_code_2\": \"IN\",\n            \"iso_code_3\": \"IND\",\n            \"numeric_code\": \"356\",\n            \"dialing_code\": \"+91\"\n        },\n        {\n            \"name\": \"Syria\",\n            \"iso_code_2\": \"SY\",\n            \"iso_code_3\": \"SYR\",\n            \"numeric_code\": \"760\",\n            \"dialing_code\": \"+963\"\n        },\n        {\n            \"name\": \"Montenegro\",\n            \"iso_code_2\": \"ME\",\n            \"iso_code_3\": \"MNE\",\n            \"numeric_code\": \"499\",\n            \"dialing_code\": \"+382\"\n        },\n        {\n            \"name\": \"Eswatini\",\n            \"iso_code_2\": \"SZ\",\n            \"iso_code_3\": \"SWZ\",\n            \"numeric_code\": \"748\",\n            \"dialing_code\": \"+268\"\n        },\n        {\n            \"name\": \"Paraguay\",\n            \"iso_code_2\": \"PY\",\n            \"iso_code_3\": \"PRY\",\n            \"numeric_code\": \"600\",\n            \"dialing_code\": \"+595\"\n        },\n        {\n            \"name\": \"El Salvador\",\n            \"iso_code_2\": \"SV\",\n            \"iso_code_3\": \"SLV\",\n            \"numeric_code\": \"222\",\n            \"dialing_code\": \"+503\"\n        },\n        {\n            \"name\": \"Ukraine\",\n            \"iso_code_2\": \"UA\",\n            \"iso_code_3\": \"UKR\",\n            \"numeric_code\": \"804\",\n            \"dialing_code\": \"+380\"\n        },\n        {\n            \"name\": \"Isle of Man\",\n            \"iso_code_2\": \"IM\",\n            \"iso_code_3\": \"IMN\",\n            \"numeric_code\": \"833\",\n            \"dialing_code\": \"+44\"\n        },\n        {\n            \"name\": \"Namibia\",\n            \"iso_code_2\": \"NA\",\n            \"iso_code_3\": \"NAM\",\n            \"numeric_code\": \"516\",\n            \"dialing_code\": \"+264\"\n        },\n        {\n            \"name\": \"United Arab Emirates\",\n            \"iso_code_2\": \"AE\",\n            \"iso_code_3\": \"ARE\",\n            \"numeric_code\": \"784\",\n            \"dialing_code\": \"+971\"\n        },\n        {\n            \"name\": \"Bulgaria\",\n            \"iso_code_2\": \"BG\",\n            \"iso_code_3\": \"BGR\",\n            \"numeric_code\": \"100\",\n            \"dialing_code\": \"+359\"\n        },\n        {\n            \"name\": \"Greenland\",\n            \"iso_code_2\": \"GL\",\n            \"iso_code_3\": \"GRL\",\n            \"numeric_code\": \"304\",\n            \"dialing_code\": \"+299\"\n        },\n        {\n            \"name\": \"Germany\",\n            \"iso_code_2\": \"DE\",\n            \"iso_code_3\": \"DEU\",\n            \"numeric_code\": \"276\",\n            \"dialing_code\": \"+49\"\n        },\n        {\n            \"name\": \"Cambodia\",\n            \"iso_code_2\": \"KH\",\n            \"iso_code_3\": \"KHM\",\n            \"numeric_code\": \"116\",\n            \"dialing_code\": \"+855\"\n        },\n        {\n            \"name\": \"Iraq\",\n            \"iso_code_2\": \"IQ\",\n            \"iso_code_3\": \"IRQ\",\n            \"numeric_code\": \"368\",\n            \"dialing_code\": \"+964\"\n        },\n        {\n            \"name\": \"French Southern and Antarctic Lands\",\n            \"iso_code_2\": \"TF\",\n            \"iso_code_3\": \"ATF\",\n            \"numeric_code\": \"260\",\n            \"dialing_code\": \"+262\"\n        },\n        {\n            \"name\": \"Sweden\",\n            \"iso_code_2\": \"SE\",\n            \"iso_code_3\": \"SWE\",\n            \"numeric_code\": \"752\",\n            \"dialing_code\": \"+46\"\n        },\n        {\n            \"name\": \"Cuba\",\n            \"iso_code_2\": \"CU\",\n            \"iso_code_3\": \"CUB\",\n            \"numeric_code\": \"192\",\n            \"dialing_code\": \"+53\"\n        },\n        {\n            \"name\": \"Kyrgyzstan\",\n            \"iso_code_2\": \"KG\",\n            \"iso_code_3\": \"KGZ\",\n            \"numeric_code\": \"417\",\n            \"dialing_code\": \"+996\"\n        },\n        {\n            \"name\": \"Russia\",\n            \"iso_code_2\": \"RU\",\n            \"iso_code_3\": \"RUS\",\n            \"numeric_code\": \"643\",\n            \"dialing_code\": \"+7\"\n        },\n        {\n            \"name\": \"Malaysia\",\n            \"iso_code_2\": \"MY\",\n            \"iso_code_3\": \"MYS\",\n            \"numeric_code\": \"458\",\n            \"dialing_code\": \"+60\"\n        },\n        {\n            \"name\": \"São Tomé and Príncipe\",\n            \"iso_code_2\": \"ST\",\n            \"iso_code_3\": \"STP\",\n            \"numeric_code\": \"678\",\n            \"dialing_code\": \"+239\"\n        },\n        {\n            \"name\": \"Cyprus\",\n            \"iso_code_2\": \"CY\",\n            \"iso_code_3\": \"CYP\",\n            \"numeric_code\": \"196\",\n            \"dialing_code\": \"+357\"\n        },\n        {\n            \"name\": \"Canada\",\n            \"iso_code_2\": \"CA\",\n            \"iso_code_3\": \"CAN\",\n            \"numeric_code\": \"124\",\n            \"dialing_code\": \"+1\"\n        },\n        {\n            \"name\": \"Malawi\",\n            \"iso_code_2\": \"MW\",\n            \"iso_code_3\": \"MWI\",\n            \"numeric_code\": \"454\",\n            \"dialing_code\": \"+265\"\n        },\n        {\n            \"name\": \"Saudi Arabia\",\n            \"iso_code_2\": \"SA\",\n            \"iso_code_3\": \"SAU\",\n            \"numeric_code\": \"682\",\n            \"dialing_code\": \"+966\"\n        },\n        {\n            \"name\": \"Bosnia and Herzegovina\",\n            \"iso_code_2\": \"BA\",\n            \"iso_code_3\": \"BIH\",\n            \"numeric_code\": \"070\",\n            \"dialing_code\": \"+387\"\n        },\n        {\n            \"name\": \"Ethiopia\",\n            \"iso_code_2\": \"ET\",\n            \"iso_code_3\": \"ETH\",\n            \"numeric_code\": \"231\",\n            \"dialing_code\": \"+251\"\n        },\n        {\n            \"name\": \"Spain\",\n            \"iso_code_2\": \"ES\",\n            \"iso_code_3\": \"ESP\",\n            \"numeric_code\": \"724\",\n            \"dialing_code\": \"+34\"\n        },\n        {\n            \"name\": \"Slovenia\",\n            \"iso_code_2\": \"SI\",\n            \"iso_code_3\": \"SVN\",\n            \"numeric_code\": \"705\",\n            \"dialing_code\": \"+386\"\n        },\n        {\n            \"name\": \"Oman\",\n            \"iso_code_2\": \"OM\",\n            \"iso_code_3\": \"OMN\",\n            \"numeric_code\": \"512\",\n            \"dialing_code\": \"+968\"\n        },\n        {\n            \"name\": \"Saint Pierre and Miquelon\",\n            \"iso_code_2\": \"PM\",\n            \"iso_code_3\": \"SPM\",\n            \"numeric_code\": \"666\",\n            \"dialing_code\": \"+508\"\n        },\n        {\n            \"name\": \"Macau\",\n            \"iso_code_2\": \"MO\",\n            \"iso_code_3\": \"MAC\",\n            \"numeric_code\": \"446\",\n            \"dialing_code\": \"+853\"\n        },\n        {\n            \"name\": \"San Marino\",\n            \"iso_code_2\": \"SM\",\n            \"iso_code_3\": \"SMR\",\n            \"numeric_code\": \"674\",\n            \"dialing_code\": \"+378\"\n        },\n        {\n            \"name\": \"Lesotho\",\n            \"iso_code_2\": \"LS\",\n            \"iso_code_3\": \"LSO\",\n            \"numeric_code\": \"426\",\n            \"dialing_code\": \"+266\"\n        },\n        {\n            \"name\": \"Marshall Islands\",\n            \"iso_code_2\": \"MH\",\n            \"iso_code_3\": \"MHL\",\n            \"numeric_code\": \"584\",\n            \"dialing_code\": \"+692\"\n        },\n        {\n            \"name\": \"Sint Maarten\",\n            \"iso_code_2\": \"SX\",\n            \"iso_code_3\": \"SXM\",\n            \"numeric_code\": \"534\",\n            \"dialing_code\": \"+1721\"\n        },\n        {\n            \"name\": \"Iceland\",\n            \"iso_code_2\": \"IS\",\n            \"iso_code_3\": \"ISL\",\n            \"numeric_code\": \"352\",\n            \"dialing_code\": \"+354\"\n        },\n        {\n            \"name\": \"Luxembourg\",\n            \"iso_code_2\": \"LU\",\n            \"iso_code_3\": \"LUX\",\n            \"numeric_code\": \"442\",\n            \"dialing_code\": \"+352\"\n        },\n        {\n            \"name\": \"Argentina\",\n            \"iso_code_2\": \"AR\",\n            \"iso_code_3\": \"ARG\",\n            \"numeric_code\": \"032\",\n            \"dialing_code\": \"+54\"\n        },\n        {\n            \"name\": \"Turks and Caicos Islands\",\n            \"iso_code_2\": \"TC\",\n            \"iso_code_3\": \"TCA\",\n            \"numeric_code\": \"796\",\n            \"dialing_code\": \"+1649\"\n        },\n        {\n            \"name\": \"Nauru\",\n            \"iso_code_2\": \"NR\",\n            \"iso_code_3\": \"NRU\",\n            \"numeric_code\": \"520\",\n            \"dialing_code\": \"+674\"\n        },\n        {\n            \"name\": \"Cocos (Keeling) Islands\",\n            \"iso_code_2\": \"CC\",\n            \"iso_code_3\": \"CCK\",\n            \"numeric_code\": \"166\",\n            \"dialing_code\": \"+61\"\n        },\n        {\n            \"name\": \"Western Sahara\",\n            \"iso_code_2\": \"EH\",\n            \"iso_code_3\": \"ESH\",\n            \"numeric_code\": \"732\",\n            \"dialing_code\": \"+2\"\n        },\n        {\n            \"name\": \"Dominica\",\n            \"iso_code_2\": \"DM\",\n            \"iso_code_3\": \"DMA\",\n            \"numeric_code\": \"212\",\n            \"dialing_code\": \"+1767\"\n        },\n        {\n            \"name\": \"Costa Rica\",\n            \"iso_code_2\": \"CR\",\n            \"iso_code_3\": \"CRI\",\n            \"numeric_code\": \"188\",\n            \"dialing_code\": \"+506\"\n        },\n        {\n            \"name\": \"Australia\",\n            \"iso_code_2\": \"AU\",\n            \"iso_code_3\": \"AUS\",\n            \"numeric_code\": \"036\",\n            \"dialing_code\": \"+61\"\n        },\n        {\n            \"name\": \"Thailand\",\n            \"iso_code_2\": \"TH\",\n            \"iso_code_3\": \"THA\",\n            \"numeric_code\": \"764\",\n            \"dialing_code\": \"+66\"\n        },\n        {\n            \"name\": \"Haiti\",\n            \"iso_code_2\": \"HT\",\n            \"iso_code_3\": \"HTI\",\n            \"numeric_code\": \"332\",\n            \"dialing_code\": \"+509\"\n        },\n        {\n            \"name\": \"Tuvalu\",\n            \"iso_code_2\": \"TV\",\n            \"iso_code_3\": \"TUV\",\n            \"numeric_code\": \"798\",\n            \"dialing_code\": \"+688\"\n        },\n        {\n            \"name\": \"Honduras\",\n            \"iso_code_2\": \"HN\",\n            \"iso_code_3\": \"HND\",\n            \"numeric_code\": \"340\",\n            \"dialing_code\": \"+504\"\n        },\n        {\n            \"name\": \"Equatorial Guinea\",\n            \"iso_code_2\": \"GQ\",\n            \"iso_code_3\": \"GNQ\",\n            \"numeric_code\": \"226\",\n            \"dialing_code\": \"+240\"\n        },\n        {\n            \"name\": \"Saint Lucia\",\n            \"iso_code_2\": \"LC\",\n            \"iso_code_3\": \"LCA\",\n            \"numeric_code\": \"662\",\n            \"dialing_code\": \"+1758\"\n        },\n        {\n            \"name\": \"French Polynesia\",\n            \"iso_code_2\": \"PF\",\n            \"iso_code_3\": \"PYF\",\n            \"numeric_code\": \"258\",\n            \"dialing_code\": \"+689\"\n        },\n        {\n            \"name\": \"Belarus\",\n            \"iso_code_2\": \"BY\",\n            \"iso_code_3\": \"BLR\",\n            \"numeric_code\": \"112\",\n            \"dialing_code\": \"+375\"\n        },\n        {\n            \"name\": \"Latvia\",\n            \"iso_code_2\": \"LV\",\n            \"iso_code_3\": \"LVA\",\n            \"numeric_code\": \"428\",\n            \"dialing_code\": \"+371\"\n        },\n        {\n            \"name\": \"Palau\",\n            \"iso_code_2\": \"PW\",\n            \"iso_code_3\": \"PLW\",\n            \"numeric_code\": \"585\",\n            \"dialing_code\": \"+680\"\n        },\n        {\n            \"name\": \"Guadeloupe\",\n            \"iso_code_2\": \"GP\",\n            \"iso_code_3\": \"GLP\",\n            \"numeric_code\": \"312\",\n            \"dialing_code\": \"+590\"\n        },\n        {\n            \"name\": \"Philippines\",\n            \"iso_code_2\": \"PH\",\n            \"iso_code_3\": \"PHL\",\n            \"numeric_code\": \"608\",\n            \"dialing_code\": \"+63\"\n        },\n        {\n            \"name\": \"Gibraltar\",\n            \"iso_code_2\": \"GI\",\n            \"iso_code_3\": \"GIB\",\n            \"numeric_code\": \"292\",\n            \"dialing_code\": \"+350\"\n        },\n        {\n            \"name\": \"Denmark\",\n            \"iso_code_2\": \"DK\",\n            \"iso_code_3\": \"DNK\",\n            \"numeric_code\": \"208\",\n            \"dialing_code\": \"+45\"\n        },\n        {\n            \"name\": \"Cameroon\",\n            \"iso_code_2\": \"CM\",\n            \"iso_code_3\": \"CMR\",\n            \"numeric_code\": \"120\",\n            \"dialing_code\": \"+237\"\n        },\n        {\n            \"name\": \"Guinea\",\n            \"iso_code_2\": \"GN\",\n            \"iso_code_3\": \"GIN\",\n            \"numeric_code\": \"324\",\n            \"dialing_code\": \"+224\"\n        },\n        {\n            \"name\": \"Bahrain\",\n            \"iso_code_2\": \"BH\",\n            \"iso_code_3\": \"BHR\",\n            \"numeric_code\": \"048\",\n            \"dialing_code\": \"+973\"\n        },\n        {\n            \"name\": \"Suriname\",\n            \"iso_code_2\": \"SR\",\n            \"iso_code_3\": \"SUR\",\n            \"numeric_code\": \"740\",\n            \"dialing_code\": \"+597\"\n        },\n        {\n            \"name\": \"DR Congo\",\n            \"iso_code_2\": \"CD\",\n            \"iso_code_3\": \"COD\",\n            \"numeric_code\": \"180\",\n            \"dialing_code\": \"+243\"\n        },\n        {\n            \"name\": \"Somalia\",\n            \"iso_code_2\": \"SO\",\n            \"iso_code_3\": \"SOM\",\n            \"numeric_code\": \"706\",\n            \"dialing_code\": \"+252\"\n        },\n        {\n            \"name\": \"Czechia\",\n            \"iso_code_2\": \"CZ\",\n            \"iso_code_3\": \"CZE\",\n            \"numeric_code\": \"203\",\n            \"dialing_code\": \"+420\"\n        },\n        {\n            \"name\": \"New Caledonia\",\n            \"iso_code_2\": \"NC\",\n            \"iso_code_3\": \"NCL\",\n            \"numeric_code\": \"540\",\n            \"dialing_code\": \"+687\"\n        },\n        {\n            \"name\": \"Vanuatu\",\n            \"iso_code_2\": \"VU\",\n            \"iso_code_3\": \"VUT\",\n            \"numeric_code\": \"548\",\n            \"dialing_code\": \"+678\"\n        },\n        {\n            \"name\": \"Saint Helena, Ascension and Tristan da Cunha\",\n            \"iso_code_2\": \"SH\",\n            \"iso_code_3\": \"SHN\",\n            \"numeric_code\": \"654\",\n            \"dialing_code\": \"+2\"\n        },\n        {\n            \"name\": \"Togo\",\n            \"iso_code_2\": \"TG\",\n            \"iso_code_3\": \"TGO\",\n            \"numeric_code\": \"768\",\n            \"dialing_code\": \"+228\"\n        },\n        {\n            \"name\": \"British Virgin Islands\",\n            \"iso_code_2\": \"VG\",\n            \"iso_code_3\": \"VGB\",\n            \"numeric_code\": \"092\",\n            \"dialing_code\": \"+1284\"\n        },\n        {\n            \"name\": \"Kenya\",\n            \"iso_code_2\": \"KE\",\n            \"iso_code_3\": \"KEN\",\n            \"numeric_code\": \"404\",\n            \"dialing_code\": \"+254\"\n        },\n        {\n            \"name\": \"Niue\",\n            \"iso_code_2\": \"NU\",\n            \"iso_code_3\": \"NIU\",\n            \"numeric_code\": \"570\",\n            \"dialing_code\": \"+683\"\n        },\n        {\n            \"name\": \"Heard Island and McDonald Islands\",\n            \"iso_code_2\": \"HM\",\n            \"iso_code_3\": \"HMD\",\n            \"numeric_code\": \"334\",\n            \"dialing_code\": \"\"\n        },\n        {\n            \"name\": \"Rwanda\",\n            \"iso_code_2\": \"RW\",\n            \"iso_code_3\": \"RWA\",\n            \"numeric_code\": \"646\",\n            \"dialing_code\": \"+250\"\n        },\n        {\n            \"name\": \"Estonia\",\n            \"iso_code_2\": \"EE\",\n            \"iso_code_3\": \"EST\",\n            \"numeric_code\": \"233\",\n            \"dialing_code\": \"+372\"\n        },\n        {\n            \"name\": \"Romania\",\n            \"iso_code_2\": \"RO\",\n            \"iso_code_3\": \"ROU\",\n            \"numeric_code\": \"642\",\n            \"dialing_code\": \"+40\"\n        },\n        {\n            \"name\": \"Trinidad and Tobago\",\n            \"iso_code_2\": \"TT\",\n            \"iso_code_3\": \"TTO\",\n            \"numeric_code\": \"780\",\n            \"dialing_code\": \"+1868\"\n        },\n        {\n            \"name\": \"Guyana\",\n            \"iso_code_2\": \"GY\",\n            \"iso_code_3\": \"GUY\",\n            \"numeric_code\": \"328\",\n            \"dialing_code\": \"+592\"\n        },\n        {\n            \"name\": \"Timor-Leste\",\n            \"iso_code_2\": \"TL\",\n            \"iso_code_3\": \"TLS\",\n            \"numeric_code\": \"626\",\n            \"dialing_code\": \"+670\"\n        },\n        {\n            \"name\": \"Vietnam\",\n            \"iso_code_2\": \"VN\",\n            \"iso_code_3\": \"VNM\",\n            \"numeric_code\": \"704\",\n            \"dialing_code\": \"+84\"\n        },\n        {\n            \"name\": \"Uruguay\",\n            \"iso_code_2\": \"UY\",\n            \"iso_code_3\": \"URY\",\n            \"numeric_code\": \"858\",\n            \"dialing_code\": \"+598\"\n        },\n        {\n            \"name\": \"Vatican City\",\n            \"iso_code_2\": \"VA\",\n            \"iso_code_3\": \"VAT\",\n            \"numeric_code\": \"336\",\n            \"dialing_code\": \"+3\"\n        },\n        {\n            \"name\": \"Hong Kong\",\n            \"iso_code_2\": \"HK\",\n            \"iso_code_3\": \"HKG\",\n            \"numeric_code\": \"344\",\n            \"dialing_code\": \"+852\"\n        },\n        {\n            \"name\": \"Austria\",\n            \"iso_code_2\": \"AT\",\n            \"iso_code_3\": \"AUT\",\n            \"numeric_code\": \"040\",\n            \"dialing_code\": \"+43\"\n        },\n        {\n            \"name\": \"Antigua and Barbuda\",\n            \"iso_code_2\": \"AG\",\n            \"iso_code_3\": \"ATG\",\n            \"numeric_code\": \"028\",\n            \"dialing_code\": \"+1268\"\n        },\n        {\n            \"name\": \"Turkmenistan\",\n            \"iso_code_2\": \"TM\",\n            \"iso_code_3\": \"TKM\",\n            \"numeric_code\": \"795\",\n            \"dialing_code\": \"+993\"\n        },\n        {\n            \"name\": \"Mozambique\",\n            \"iso_code_2\": \"MZ\",\n            \"iso_code_3\": \"MOZ\",\n            \"numeric_code\": \"508\",\n            \"dialing_code\": \"+258\"\n        },\n        {\n            \"name\": \"Panama\",\n            \"iso_code_2\": \"PA\",\n            \"iso_code_3\": \"PAN\",\n            \"numeric_code\": \"591\",\n            \"dialing_code\": \"+507\"\n        },\n        {\n            \"name\": \"Micronesia\",\n            \"iso_code_2\": \"FM\",\n            \"iso_code_3\": \"FSM\",\n            \"numeric_code\": \"583\",\n            \"dialing_code\": \"+691\"\n        },\n        {\n            \"name\": \"Ireland\",\n            \"iso_code_2\": \"IE\",\n            \"iso_code_3\": \"IRL\",\n            \"numeric_code\": \"372\",\n            \"dialing_code\": \"+353\"\n        },\n        {\n            \"name\": \"Curaçao\",\n            \"iso_code_2\": \"CW\",\n            \"iso_code_3\": \"CUW\",\n            \"numeric_code\": \"531\",\n            \"dialing_code\": \"+599\"\n        },\n        {\n            \"name\": \"French Guiana\",\n            \"iso_code_2\": \"GF\",\n            \"iso_code_3\": \"GUF\",\n            \"numeric_code\": \"254\",\n            \"dialing_code\": \"+594\"\n        },\n        {\n            \"name\": \"Norway\",\n            \"iso_code_2\": \"NO\",\n            \"iso_code_3\": \"NOR\",\n            \"numeric_code\": \"578\",\n            \"dialing_code\": \"+47\"\n        },\n        {\n            \"name\": \"Åland Islands\",\n            \"iso_code_2\": \"AX\",\n            \"iso_code_3\": \"ALA\",\n            \"numeric_code\": \"248\",\n            \"dialing_code\": \"+35818\"\n        },\n        {\n            \"name\": \"Central African Republic\",\n            \"iso_code_2\": \"CF\",\n            \"iso_code_3\": \"CAF\",\n            \"numeric_code\": \"140\",\n            \"dialing_code\": \"+236\"\n        },\n        {\n            \"name\": \"Burkina Faso\",\n            \"iso_code_2\": \"BF\",\n            \"iso_code_3\": \"BFA\",\n            \"numeric_code\": \"854\",\n            \"dialing_code\": \"+226\"\n        },\n        {\n            \"name\": \"Eritrea\",\n            \"iso_code_2\": \"ER\",\n            \"iso_code_3\": \"ERI\",\n            \"numeric_code\": \"232\",\n            \"dialing_code\": \"+291\"\n        },\n        {\n            \"name\": \"Tanzania\",\n            \"iso_code_2\": \"TZ\",\n            \"iso_code_3\": \"TZA\",\n            \"numeric_code\": \"834\",\n            \"dialing_code\": \"+255\"\n        },\n        {\n            \"name\": \"South Korea\",\n            \"iso_code_2\": \"KR\",\n            \"iso_code_3\": \"KOR\",\n            \"numeric_code\": \"410\",\n            \"dialing_code\": \"+82\"\n        },\n        {\n            \"name\": \"Jordan\",\n            \"iso_code_2\": \"JO\",\n            \"iso_code_3\": \"JOR\",\n            \"numeric_code\": \"400\",\n            \"dialing_code\": \"+962\"\n        },\n        {\n            \"name\": \"Mauritania\",\n            \"iso_code_2\": \"MR\",\n            \"iso_code_3\": \"MRT\",\n            \"numeric_code\": \"478\",\n            \"dialing_code\": \"+222\"\n        },\n        {\n            \"name\": \"Lithuania\",\n            \"iso_code_2\": \"LT\",\n            \"iso_code_3\": \"LTU\",\n            \"numeric_code\": \"440\",\n            \"dialing_code\": \"+370\"\n        },\n        {\n            \"name\": \"United States Minor Outlying Islands\",\n            \"iso_code_2\": \"UM\",\n            \"iso_code_3\": \"UMI\",\n            \"numeric_code\": \"581\",\n            \"dialing_code\": \"+268\"\n        },\n        {\n            \"name\": \"Slovakia\",\n            \"iso_code_2\": \"SK\",\n            \"iso_code_3\": \"SVK\",\n            \"numeric_code\": \"703\",\n            \"dialing_code\": \"+421\"\n        },\n        {\n            \"name\": \"Angola\",\n            \"iso_code_2\": \"AO\",\n            \"iso_code_3\": \"AGO\",\n            \"numeric_code\": \"024\",\n            \"dialing_code\": \"+244\"\n        },\n        {\n            \"name\": \"Kazakhstan\",\n            \"iso_code_2\": \"KZ\",\n            \"iso_code_3\": \"KAZ\",\n            \"numeric_code\": \"398\",\n            \"dialing_code\": \"+7\"\n        },\n        {\n            \"name\": \"Moldova\",\n            \"iso_code_2\": \"MD\",\n            \"iso_code_3\": \"MDA\",\n            \"numeric_code\": \"498\",\n            \"dialing_code\": \"+373\"\n        },\n        {\n            \"name\": \"Mali\",\n            \"iso_code_2\": \"ML\",\n            \"iso_code_3\": \"MLI\",\n            \"numeric_code\": \"466\",\n            \"dialing_code\": \"+223\"\n        },\n        {\n            \"name\": \"Falkland Islands\",\n            \"iso_code_2\": \"FK\",\n            \"iso_code_3\": \"FLK\",\n            \"numeric_code\": \"238\",\n            \"dialing_code\": \"+500\"\n        },\n        {\n            \"name\": \"Armenia\",\n            \"iso_code_2\": \"AM\",\n            \"iso_code_3\": \"ARM\",\n            \"numeric_code\": \"051\",\n            \"dialing_code\": \"+374\"\n        },\n        {\n            \"name\": \"Samoa\",\n            \"iso_code_2\": \"WS\",\n            \"iso_code_3\": \"WSM\",\n            \"numeric_code\": \"882\",\n            \"dialing_code\": \"+685\"\n        },\n        {\n            \"name\": \"Jersey\",\n            \"iso_code_2\": \"JE\",\n            \"iso_code_3\": \"JEY\",\n            \"numeric_code\": \"832\",\n            \"dialing_code\": \"+44\"\n        },\n        {\n            \"name\": \"Japan\",\n            \"iso_code_2\": \"JP\",\n            \"iso_code_3\": \"JPN\",\n            \"numeric_code\": \"392\",\n            \"dialing_code\": \"+81\"\n        },\n        {\n            \"name\": \"Bolivia\",\n            \"iso_code_2\": \"BO\",\n            \"iso_code_3\": \"BOL\",\n            \"numeric_code\": \"068\",\n            \"dialing_code\": \"+591\"\n        },\n        {\n            \"name\": \"Chile\",\n            \"iso_code_2\": \"CL\",\n            \"iso_code_3\": \"CHL\",\n            \"numeric_code\": \"152\",\n            \"dialing_code\": \"+56\"\n        },\n        {\n            \"name\": \"United States\",\n            \"iso_code_2\": \"US\",\n            \"iso_code_3\": \"USA\",\n            \"numeric_code\": \"840\",\n            \"dialing_code\": \"+1\"\n        },\n        {\n            \"name\": \"Saint Vincent and the Grenadines\",\n            \"iso_code_2\": \"VC\",\n            \"iso_code_3\": \"VCT\",\n            \"numeric_code\": \"670\",\n            \"dialing_code\": \"+1784\"\n        },\n        {\n            \"name\": \"Bermuda\",\n            \"iso_code_2\": \"BM\",\n            \"iso_code_3\": \"BMU\",\n            \"numeric_code\": \"060\",\n            \"dialing_code\": \"+1441\"\n        },\n        {\n            \"name\": \"Seychelles\",\n            \"iso_code_2\": \"SC\",\n            \"iso_code_3\": \"SYC\",\n            \"numeric_code\": \"690\",\n            \"dialing_code\": \"+248\"\n        },\n        {\n            \"name\": \"British Indian Ocean Territory\",\n            \"iso_code_2\": \"IO\",\n            \"iso_code_3\": \"IOT\",\n            \"numeric_code\": \"086\",\n            \"dialing_code\": \"+246\"\n        },\n        {\n            \"name\": \"Guatemala\",\n            \"iso_code_2\": \"GT\",\n            \"iso_code_3\": \"GTM\",\n            \"numeric_code\": \"320\",\n            \"dialing_code\": \"+502\"\n        },\n        {\n            \"name\": \"Ecuador\",\n            \"iso_code_2\": \"EC\",\n            \"iso_code_3\": \"ECU\",\n            \"numeric_code\": \"218\",\n            \"dialing_code\": \"+593\"\n        },\n        {\n            \"name\": \"Martinique\",\n            \"iso_code_2\": \"MQ\",\n            \"iso_code_3\": \"MTQ\",\n            \"numeric_code\": \"474\",\n            \"dialing_code\": \"+596\"\n        },\n        {\n            \"name\": \"Tajikistan\",\n            \"iso_code_2\": \"TJ\",\n            \"iso_code_3\": \"TJK\",\n            \"numeric_code\": \"762\",\n            \"dialing_code\": \"+992\"\n        },\n        {\n            \"name\": \"Malta\",\n            \"iso_code_2\": \"MT\",\n            \"iso_code_3\": \"MLT\",\n            \"numeric_code\": \"470\",\n            \"dialing_code\": \"+356\"\n        },\n        {\n            \"name\": \"Gambia\",\n            \"iso_code_2\": \"GM\",\n            \"iso_code_3\": \"GMB\",\n            \"numeric_code\": \"270\",\n            \"dialing_code\": \"+220\"\n        },\n        {\n            \"name\": \"Nigeria\",\n            \"iso_code_2\": \"NG\",\n            \"iso_code_3\": \"NGA\",\n            \"numeric_code\": \"566\",\n            \"dialing_code\": \"+234\"\n        },\n        {\n            \"name\": \"Bahamas\",\n            \"iso_code_2\": \"BS\",\n            \"iso_code_3\": \"BHS\",\n            \"numeric_code\": \"044\",\n            \"dialing_code\": \"+1242\"\n        },\n        {\n            \"name\": \"Kosovo\",\n            \"iso_code_2\": \"XK\",\n            \"iso_code_3\": \"UNK\",\n            \"numeric_code\": \"\",\n            \"dialing_code\": \"+383\"\n        },\n        {\n            \"name\": \"Kuwait\",\n            \"iso_code_2\": \"KW\",\n            \"iso_code_3\": \"KWT\",\n            \"numeric_code\": \"414\",\n            \"dialing_code\": \"+965\"\n        },\n        {\n            \"name\": \"Maldives\",\n            \"iso_code_2\": \"MV\",\n            \"iso_code_3\": \"MDV\",\n            \"numeric_code\": \"462\",\n            \"dialing_code\": \"+960\"\n        },\n        {\n            \"name\": \"South Sudan\",\n            \"iso_code_2\": \"SS\",\n            \"iso_code_3\": \"SSD\",\n            \"numeric_code\": \"728\",\n            \"dialing_code\": \"+211\"\n        },\n        {\n            \"name\": \"Iran\",\n            \"iso_code_2\": \"IR\",\n            \"iso_code_3\": \"IRN\",\n            \"numeric_code\": \"364\",\n            \"dialing_code\": \"+98\"\n        },\n        {\n            \"name\": \"Albania\",\n            \"iso_code_2\": \"AL\",\n            \"iso_code_3\": \"ALB\",\n            \"numeric_code\": \"008\",\n            \"dialing_code\": \"+355\"\n        },\n        {\n            \"name\": \"Brazil\",\n            \"iso_code_2\": \"BR\",\n            \"iso_code_3\": \"BRA\",\n            \"numeric_code\": \"076\",\n            \"dialing_code\": \"+55\"\n        },\n        {\n            \"name\": \"Serbia\",\n            \"iso_code_2\": \"RS\",\n            \"iso_code_3\": \"SRB\",\n            \"numeric_code\": \"688\",\n            \"dialing_code\": \"+381\"\n        },\n        {\n            \"name\": \"Belize\",\n            \"iso_code_2\": \"BZ\",\n            \"iso_code_3\": \"BLZ\",\n            \"numeric_code\": \"084\",\n            \"dialing_code\": \"+501\"\n        },\n        {\n            \"name\": \"Myanmar\",\n            \"iso_code_2\": \"MM\",\n            \"iso_code_3\": \"MMR\",\n            \"numeric_code\": \"104\",\n            \"dialing_code\": \"+95\"\n        },\n        {\n            \"name\": \"Bhutan\",\n            \"iso_code_2\": \"BT\",\n            \"iso_code_3\": \"BTN\",\n            \"numeric_code\": \"064\",\n            \"dialing_code\": \"+975\"\n        },\n        {\n            \"name\": \"Venezuela\",\n            \"iso_code_2\": \"VE\",\n            \"iso_code_3\": \"VEN\",\n            \"numeric_code\": \"862\",\n            \"dialing_code\": \"+58\"\n        },\n        {\n            \"name\": \"Liberia\",\n            \"iso_code_2\": \"LR\",\n            \"iso_code_3\": \"LBR\",\n            \"numeric_code\": \"430\",\n            \"dialing_code\": \"+231\"\n        },\n        {\n            \"name\": \"Jamaica\",\n            \"iso_code_2\": \"JM\",\n            \"iso_code_3\": \"JAM\",\n            \"numeric_code\": \"388\",\n            \"dialing_code\": \"+1876\"\n        },\n        {\n            \"name\": \"Poland\",\n            \"iso_code_2\": \"PL\",\n            \"iso_code_3\": \"POL\",\n            \"numeric_code\": \"616\",\n            \"dialing_code\": \"+48\"\n        },\n        {\n            \"name\": \"Cayman Islands\",\n            \"iso_code_2\": \"KY\",\n            \"iso_code_3\": \"CYM\",\n            \"numeric_code\": \"136\",\n            \"dialing_code\": \"+1345\"\n        },\n        {\n            \"name\": \"Brunei\",\n            \"iso_code_2\": \"BN\",\n            \"iso_code_3\": \"BRN\",\n            \"numeric_code\": \"096\",\n            \"dialing_code\": \"+673\"\n        },\n        {\n            \"name\": \"Comoros\",\n            \"iso_code_2\": \"KM\",\n            \"iso_code_3\": \"COM\",\n            \"numeric_code\": \"174\",\n            \"dialing_code\": \"+269\"\n        },\n        {\n            \"name\": \"Guam\",\n            \"iso_code_2\": \"GU\",\n            \"iso_code_3\": \"GUM\",\n            \"numeric_code\": \"316\",\n            \"dialing_code\": \"+1671\"\n        },\n        {\n            \"name\": \"Tonga\",\n            \"iso_code_2\": \"TO\",\n            \"iso_code_3\": \"TON\",\n            \"numeric_code\": \"776\",\n            \"dialing_code\": \"+676\"\n        },\n        {\n            \"name\": \"Kiribati\",\n            \"iso_code_2\": \"KI\",\n            \"iso_code_3\": \"KIR\",\n            \"numeric_code\": \"296\",\n            \"dialing_code\": \"+686\"\n        },\n        {\n            \"name\": \"Ghana\",\n            \"iso_code_2\": \"GH\",\n            \"iso_code_3\": \"GHA\",\n            \"numeric_code\": \"288\",\n            \"dialing_code\": \"+233\"\n        },\n        {\n            \"name\": \"Chad\",\n            \"iso_code_2\": \"TD\",\n            \"iso_code_3\": \"TCD\",\n            \"numeric_code\": \"148\",\n            \"dialing_code\": \"+235\"\n        },\n        {\n            \"name\": \"Zimbabwe\",\n            \"iso_code_2\": \"ZW\",\n            \"iso_code_3\": \"ZWE\",\n            \"numeric_code\": \"716\",\n            \"dialing_code\": \"+263\"\n        },\n        {\n            \"name\": \"Saint Martin\",\n            \"iso_code_2\": \"MF\",\n            \"iso_code_3\": \"MAF\",\n            \"numeric_code\": \"663\",\n            \"dialing_code\": \"+590\"\n        },\n        {\n            \"name\": \"Mongolia\",\n            \"iso_code_2\": \"MN\",\n            \"iso_code_3\": \"MNG\",\n            \"numeric_code\": \"496\",\n            \"dialing_code\": \"+976\"\n        },\n        {\n            \"name\": \"Portugal\",\n            \"iso_code_2\": \"PT\",\n            \"iso_code_3\": \"PRT\",\n            \"numeric_code\": \"620\",\n            \"dialing_code\": \"+351\"\n        },\n        {\n            \"name\": \"American Samoa\",\n            \"iso_code_2\": \"AS\",\n            \"iso_code_3\": \"ASM\",\n            \"numeric_code\": \"016\",\n            \"dialing_code\": \"+1684\"\n        },\n        {\n            \"name\": \"Republic of the Congo\",\n            \"iso_code_2\": \"CG\",\n            \"iso_code_3\": \"COG\",\n            \"numeric_code\": \"178\",\n            \"dialing_code\": \"+242\"\n        },\n        {\n            \"name\": \"Belgium\",\n            \"iso_code_2\": \"BE\",\n            \"iso_code_3\": \"BEL\",\n            \"numeric_code\": \"056\",\n            \"dialing_code\": \"+32\"\n        },\n        {\n            \"name\": \"Israel\",\n            \"iso_code_2\": \"IL\",\n            \"iso_code_3\": \"ISR\",\n            \"numeric_code\": \"376\",\n            \"dialing_code\": \"+972\"\n        },\n        {\n            \"name\": \"New Zealand\",\n            \"iso_code_2\": \"NZ\",\n            \"iso_code_3\": \"NZL\",\n            \"numeric_code\": \"554\",\n            \"dialing_code\": \"+64\"\n        },\n        {\n            \"name\": \"Nicaragua\",\n            \"iso_code_2\": \"NI\",\n            \"iso_code_3\": \"NIC\",\n            \"numeric_code\": \"558\",\n            \"dialing_code\": \"+505\"\n        },\n        {\n            \"name\": \"Anguilla\",\n            \"iso_code_2\": \"AI\",\n            \"iso_code_3\": \"AIA\",\n            \"numeric_code\": \"660\",\n            \"dialing_code\": \"+1264\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
