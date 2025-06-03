@@ -4,10 +4,7 @@ use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\CountryController;
 use App\Http\Controllers\Api\V1\Isc\NotificationController as IscNotificationController;
 use App\Http\Controllers\Api\V1\NotificationController;
-use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
-
-Route::get('test/command', [TestController::class, 'create']);
 
 Route::prefix('v1')
     ->group(function () {
