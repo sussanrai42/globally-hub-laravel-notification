@@ -22,6 +22,8 @@ Make sure the following are installed or available via Docker:
     - Run command to create network: docker network create golballyhub
     - Run command to run docker container: docker compose up -d
     - Once all services are running, access the application at: [goto](http://localhost:8000)
+    - Goto the docker container through command: docker exec -it globallyhublaravel bash
+    - After inside a docker container, run command: php artisan migrate
 
 ## API Usage
 This Laravel project exposes APIs for sending notifications.
